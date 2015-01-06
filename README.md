@@ -1,31 +1,34 @@
 # Arbeiter
 
-TODO: Write a gem description
+Cheap workers for your Beanstalk tubes.
+
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Update your application's Gemfile:
 
 ```ruby
 gem 'arbeiter'
 ```
 
-And then execute:
 
-    $ bundle
+## Implement the worker
 
-Or install it yourself as:
+    class Ranker
 
-    $ gem install arbeiter
+      include Arbeiter      # 1. Include the Arbeiter module
 
-## Usage
+      def execute(params)
+        puts params         # 2. Implement worker logic
+      end
 
-TODO: Write usage instructions here
+    end
 
-## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/arbeiter/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+## Run the processing
+
+    conn = Beaneater::Pool.new(['localhost:11300'])
+    Ranker.new.register_and_process!(conn, 'ranker')
+
+This would block and process all jobs put on the 'ranker' tube.
+
