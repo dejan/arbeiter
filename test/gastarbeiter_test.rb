@@ -15,7 +15,7 @@ class DummyCalculator
   end
 end
 
-class BaseTest < Minitest::Test
+class GastarbeiterTest < Minitest::Test
 
   def setup
     @beanstalk = Beaneater::Pool.new(['localhost:11300'])
