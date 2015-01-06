@@ -2,7 +2,7 @@ require 'test_helper'
 require 'beaneater'
 
 class DummyCalculator
-  include Arbeiter
+  include Gastarbeiter
   attr_reader :sum
 
   def add(value)

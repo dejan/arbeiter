@@ -1,4 +1,4 @@
-# Arbeiter
+# Gastarbeiter
 
 Cheap workers for your Beanstalk tubes.
 
@@ -8,7 +8,7 @@ Cheap workers for your Beanstalk tubes.
 Update your application's Gemfile:
 
 ```ruby
-gem 'arbeiter'
+gem 'gastarbeiter'
 ```
 
 
@@ -16,7 +16,7 @@ gem 'arbeiter'
 
     class Ranker
 
-      include Arbeiter      # 1. Include the Arbeiter module
+      include Gastarbeiter      # 1. Include the Arbeiter module
 
       def execute(params)
         puts params         # 2. Implement worker logic

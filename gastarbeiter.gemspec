@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'arbeiter/version'
+require 'gastarbeiter/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "arbeiter"
-  spec.version       = Arbeiter::VERSION
+  spec.name          = "gastarbeiter"
+  spec.version       = Gastarbeiter::VERSION
   spec.authors       = ["Dejan Simic"]
   spec.email         = ["desimic@gmail.com"]
   spec.summary       = %q{Cheap workers for your Beanstalk tubes}

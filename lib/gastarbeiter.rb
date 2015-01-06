@@ -1,7 +1,7 @@
-require 'arbeiter/version'
+require 'gastarbeiter/version'
 require 'json'
 
-module Arbeiter
+module Gastarbeiter
 
   # implement this method in classes
   def process(params)
