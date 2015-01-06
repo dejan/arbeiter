@@ -32,7 +32,7 @@ class BaseTest < Minitest::Test
     Thread.new do
       calc.register_and_process!(@beanstalk)
     end
-    sleep 0.1
+    sleep 0.1 # give it some time to process jobs
     assert_equal 17, calc.sum
   end
 
